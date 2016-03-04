@@ -21,9 +21,9 @@ forum = Zendesk(FORUM_DOMAIN,
                 use_api_token=True,
                 api_version=2)
 
-# We need to override the mapping table since it doesn't currently
+# We need to update the mapping table since it doesn't currently
 # support the Community API
-forum.mapping_table = mapping_table
+forum.mapping_table.update(mapping_table)
 
 
 class ForumPost(object):
