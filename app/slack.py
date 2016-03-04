@@ -44,11 +44,12 @@ class SlackText(object):
     def __init__(self, post):
         self.post = post
 
+    def __repr__(self):
+        return str(self.asdict())
+
     @property
     def pretext(self):
-        if self.post.is_old_and_uncommented():
-            return "This post is over %s hours old and uncommented" % (self.post.post_age.seconds / 60 / 60)
-        return "There are %s comments" % self.comment_count
+        return "There are %s comments" % self.post.comment_count
 
     @property
     def text(self):
