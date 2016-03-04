@@ -21,6 +21,10 @@ class Slack(object):
         )
 
     def generate_data(self):
+        '''
+        This could probably be better to support all the
+        arguments that Slack could expect
+        '''
         data = {
             'username': SLACKBOT_USERNAME,
             'channel': SLACKBOT_CHANNEL,
@@ -53,6 +57,10 @@ class SlackText(object):
         return text
 
     def asdict(self):
+        '''
+        This dictionary should map to the parameters that Slack
+        expects in the attachments.
+        '''
         return dict(
             pretext=self.pretext,
             text=self.text,
